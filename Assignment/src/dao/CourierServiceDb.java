@@ -3,15 +3,16 @@ package dao;
 import java.sql.*;
 import java.util.*;
 
-import connectionutil.DBConnection;
+import util.DBConnUtil;
 import entities.Courier;
 
 public class CourierServiceDb {
     private static Connection connection;
+    
 
     
     public CourierServiceDb() {
-        connection = DBConnection.getConnection();
+        connection = DBConnUtil.getDbConnection();
         if (connection != null) {
             System.out.println("Database connection established in CourierServiceDb.");
         } else {
