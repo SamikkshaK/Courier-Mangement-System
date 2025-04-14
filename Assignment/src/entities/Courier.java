@@ -25,7 +25,7 @@ public class Courier {
         this.status = "Placed"; 
     }
 
-    // Getters and Setters
+    
     public String getTrackingNumber() {
         return trackingNumber;
     }

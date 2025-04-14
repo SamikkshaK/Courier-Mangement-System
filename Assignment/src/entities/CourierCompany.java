@@ -1,25 +1,25 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CourierCompany {
     private String companyName;
-    private List<Courier> courierDetails;
-    private List<Employee> employeeDetails;
-    private List<Location> locationDetails;
+    private List<Courier> courierDetails = new ArrayList<>();
+    private List<Employee> employeeDetails = new ArrayList<>();
+    private List<Location> locationDetails = new ArrayList<>();
 
-    // Default constructor
     public CourierCompany() {}
 
-    // Parameterized constructor
-    public CourierCompany(String companyName, List<Courier> courierDetails, List<Employee> employeeDetails, List<Location> locationDetails) {
+    public CourierCompany(String companyName, List<Courier> courierDetails,
+                          List<Employee> employeeDetails, List<Location> locationDetails) {
         this.companyName = companyName;
         this.courierDetails = courierDetails;
         this.employeeDetails = employeeDetails;
         this.locationDetails = locationDetails;
     }
 
-    // Getters and Setters
+    // Getters and setters
     public String getCompanyName() {
         return companyName;
     }
@@ -52,32 +52,39 @@ public class CourierCompany {
         this.locationDetails = locationDetails;
     }
 
-    // toString method
-    @Override
-    public String toString() {
-        return "CourierCompany [CompanyName=" + companyName + 
-               ", Couriers=" + courierDetails + 
-               ", Employees=" + employeeDetails + 
-               ", Locations=" + locationDetails + "]";
+    // Business methods
+    public void addCourier(Courier courier) {
+        courierDetails.add(courier);
     }
 
-	public Courier[] getAllCouriers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Courier getCourierByTrackingNumber(String trackingNumber) {
+        for (Courier c : courierDetails) {
+            if (c.getTrackingNumber().equals(trackingNumber)) {
+                return c;
+            }
+        }
+        return null;
+    }
 
-	public void addCourier(Courier courier) {
-		// TODO Auto-generated method stub
-		
-	}
+    public Courier[] getAllCouriers() {
+        return courierDetails.toArray(new Courier[0]);
+    }
 
-	public Courier findCourierByTrackingNumber(String trackingNumber) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Courier[] getCouriersByEmployeeId(String employeeId) {
+        List<Courier> result = new ArrayList<>();
+        for (Courier c : courierDetails) {
+            if (c.getEmployeeId().equals(employeeId)) {
+                result.add(c);
+            }
+        }
+        return result.toArray(new Courier[0]);
+    }
 
-	public Courier[] getCouriersByEmployeeId(String employeeId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public String toString() {
+        return "CourierCompany [CompanyName=" + companyName +
+               ", Couriers=" + courierDetails +
+               ", Employees=" + employeeDetails +
+               ", Locations=" + locationDetails + "]";
+    }
 }

@@ -8,10 +8,10 @@ public class Payment {
     private double amount;
     private Date paymentDate;
 
-    // Default constructor
+    
     public Payment() {}
 
-    // Parameterized constructor
+    
     public Payment(long paymentId, long courierId, double amount, Date paymentDate) {
         this.paymentId = paymentId;
         this.courierId = courierId;
@@ -19,7 +19,7 @@ public class Payment {
         this.paymentDate = paymentDate;
     }
 
-    // Getters and Setters
+    
     public long getPaymentId() {
         return paymentId;
     }
@@ -52,7 +52,7 @@ public class Payment {
         this.paymentDate = paymentDate;
     }
 
-    // ToString Method
+  
     @Override
     public String toString() {
         return "Payment [PaymentID=" + paymentId +

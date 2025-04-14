@@ -2,7 +2,7 @@ package assignment;
 
 public class FifteenSimilarAdd {
 
-    // Function to calculate similarity score between two addresses
+    
     public static int getSimilarityScore(String address1, String address2) {
         address1 = address1.toLowerCase().replaceAll("[^a-z0-9 ]", "");
         address2 = address2.toLowerCase().replaceAll("[^a-z0-9 ]", "");
@@ -23,7 +23,7 @@ public class FifteenSimilarAdd {
         return (int) (((double) common / Math.max(words1.length, words2.length)) * 100); // return similarity percentage
     }
 
-    // Function to find similar addresses
+    
     public static void findSimilarAddresses(String[] addresses, int threshold) {
         for (int i = 0; i < addresses.length; i++) {
             for (int j = i + 1; j < addresses.length; j++) {
@@ -48,7 +48,7 @@ public class FifteenSimilarAdd {
             "123 Main Street New York"
         };
 
-        int similarityThreshold = 70; // percentage
+        int similarityThreshold = 70; 
         findSimilarAddresses(addressList, similarityThreshold);
     }
 }

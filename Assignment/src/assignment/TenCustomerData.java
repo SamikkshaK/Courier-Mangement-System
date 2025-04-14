@@ -22,12 +22,12 @@ public class TenCustomerData {
     }
 
     public static void main(String[] args) {
-        System.out.println(validate("Samikksha Raj", "name"));          // true
-        System.out.println(validate("123 Main Street", "address"));     // true
-        System.out.println(validate("123-456-7890", "phone"));          // true
-        System.out.println(validate("john@doe", "name"));               // false
-        System.out.println(validate("No.12@# Main Rd", "address"));     // false
-        System.out.println(validate("1234567890", "phone"));            // false
+        System.out.println(validate("Samikksha Raj", "name"));          
+        System.out.println(validate("123 Main Street", "address"));     
+        System.out.println(validate("123-456-7890", "phone"));          
+        System.out.println(validate("john@doe", "name"));               
+        System.out.println(validate("No.12@# Main Rd", "address"));     
+        System.out.println(validate("1234567890", "phone"));            
     }
 }
 

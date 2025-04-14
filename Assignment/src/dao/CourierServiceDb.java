@@ -129,4 +129,34 @@ public class CourierServiceDb {
 
         return total;
     }
+
+
+    public List<Courier> getAllCouriersByEmployeeId(String employeeId) {
+        List<Courier> courierList = new ArrayList<>();
+        String sql = "SELECT tracking_number, sender_name, receiver_name, employee_id, status FROM couriers WHERE employee_id = ?";
+
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setString(1, employeeId);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Courier courier = new Courier(
+                    rs.getString("tracking_number"),
+                    rs.getString("sender_name"),
+                    rs.getString("receiver_name"),
+                    rs.getString("employee_id"),
+                    rs.getString("status")
+                );
+                courierList.add(courier);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error fetching couriers for employee ID " + employeeId + ": " + e.getMessage());
+        }
+
+        return courierList;
+    }
+
+
+
+	
 }

@@ -1,51 +1,66 @@
 package entities;
 
 public class Employee {
-    private int employeeID;
-    private String employeeName;
+    private int id;
+    private String name;
+    private int contactNumber;
     private String email;
-    private String contactNumber;
     private String role;
-    private double salary;
+    private float salary;
 
     public Employee() {}
 
-    public Employee(int employeeID, String employeeName, String email, String contactNumber, String role, double salary) {
-        this.employeeID = employeeID;
-        this.employeeName = employeeName;
-        this.email = email;
+    public Employee(String name, int contactNumber, String email, String role, float salary) {
+        this.name = name;
         this.contactNumber = contactNumber;
+        this.email = email;
         this.role = role;
         this.salary = salary;
     }
 
-    public int getEmployeeID() { return employeeID; }
-    public void setEmployeeID(int employeeID) { this.employeeID = employeeID; }
-
-    public String getEmployeeName() { return employeeName; }
-    public void setEmployeeName(String employeeName) { this.employeeName = employeeName; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
-    public String getContactNumber() { return contactNumber; }
-    public void setContactNumber(String contactNumber) { this.contactNumber = contactNumber; }
-
-    public String getRole() { return role; }
-    public void setRole(String role) { this.role = role; }
-
-    public double getSalary() { return salary; }
-    public void setSalary(double salary) { this.salary = salary; }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "employeeID=" + employeeID +
-                ", employeeName='" + employeeName + '\'' +
-                ", email='" + email + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
-                ", role='" + role + '\'' +
-                ", salary=" + salary +
-                '}';
+   
+    public int getId() {
+        return id;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(int contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+    public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email; 
+		
+	}
+	public String getRole() {
+	    return role;
+	}
+	public void setRole(String role) {
+	    this.role = role;
+	}
+	public float getSalary() {
+	    return salary;
+	}
+	public void setSalary(float salary) {
+	    this.salary = salary;
+	}
+	
 }

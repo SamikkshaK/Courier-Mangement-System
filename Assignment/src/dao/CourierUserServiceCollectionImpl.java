@@ -4,7 +4,6 @@ import entities.Courier;
 import entities.CourierCompanyCollection;
 import exceptions.InvalidEmployeeIdException;
 import exceptions.TrackingNumberNotFoundException;
-import services.ICourierUserService;
 
 import java.util.List;
 
@@ -59,4 +58,13 @@ public class CourierUserServiceCollectionImpl implements ICourierUserService {
         }
         return sb.toString();
     }
+
+	@Override
+	public boolean cancelOrderInDB(String trackingNumber) {
+		return false;
+	}
+
+	public String getAllCourierDetails() {
+		return null;
+	}
 }

@@ -1,7 +1,7 @@
 package dao;
 
 import entities.Courier;
-import services.ICourierAdminService;
+import entities.Employee;
 
 public class CourierAdminServiceCollection extends CourierUserServiceCollectionImpl implements ICourierAdminService {
 
@@ -16,4 +16,10 @@ public class CourierAdminServiceCollection extends CourierUserServiceCollectionI
         }
         return sb.toString();
     }
+
+	@Override
+	public int addCourierStaff(Employee obj) {
+
+		return 0;
+	}
 }
